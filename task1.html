@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Navigation Menu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav id="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <h1>Welcome to Home</h1>
+        <p>Scroll to see the effects on the navigation menu!</p>
+
+    </section>
+    <section id="about">
+        <h1>About Us</h1>
+        <p>About us </p>
+    </section>
+    <section id="services">
+        <h1>Our Services</h1>
+    </section>
+    <section id="contact">
+        <h1>Contact Us</h1>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    padding-top: 60px; 
+}
+
+
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+#navbar ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+#navbar ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+#navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+#navbar ul li a:hover {
+    background-color: #575757;
+    color: #ff6347;
+}
+
+
+#navbar.scrolled {
+    background-color: #2622;
+}
+
+
+section {
+    padding: 100px 20px;
+    height: 100vh;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+section h1 {
+    margin-bottom: 20px;
+}</style>
+<script>
+const navbar = document.getElementById('navbar');
+
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+</script>
